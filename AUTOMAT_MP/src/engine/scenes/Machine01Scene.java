@@ -7,9 +7,9 @@ import jGame.view.Renderer;
 /**
  * Created by fukon on 7/12/2017.
  */
-public class MachineScene extends GameScene{
+public class Machine01Scene extends GameScene{
 
-    public MachineScene(String name) {
+    public Machine01Scene(String name) {
         super(name);
     }
 

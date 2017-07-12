@@ -1,6 +1,5 @@
 package engine;
 
-import engine.scenes.PlayScene;
 import engine.scenes.StartScene;
 import jGame.JGameDriver;
 /**
@@ -12,7 +11,6 @@ public class MachineProject extends JGameDriver {
         super(title, w, h, fps);
         // Load game scenes
         registerScene(new StartScene("START_GAME"));
-        registerScene(new PlayScene("PLAY_GAME"));
         initialScene("START_GAME");
 
     }
