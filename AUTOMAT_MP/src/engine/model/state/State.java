@@ -11,11 +11,11 @@ import java.util.List;
  */
 public abstract class State {
 
-    private StateObject stateObject = null;
+    protected StateObject stateObject = null;
 
-    private AbstractAutomation machine;
-    private String name;
-    private boolean isFinal;
+    protected AbstractAutomation machine;
+    protected String name;
+    protected boolean isFinal;
 
     public State(String name, boolean isFinal){
         setFinal(isFinal);

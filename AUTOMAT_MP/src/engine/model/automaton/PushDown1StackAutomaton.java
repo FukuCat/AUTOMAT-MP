@@ -1,15 +1,12 @@
 package engine.model.automaton;
 
-import engine.model.state.State;
 import engine.model.state.pushdownautomata.Stack;
 import engine.model.state.pushdownautomata.Tape;
 
-public class PushDown2StackAutomaton extends AbstractAutomation {
+public class PushDown1StackAutomaton extends AbstractAutomation {
 
     public static final String READ_1 = "R1";
     public static final String WRITE_1 = "W1";
-    public static final String READ_2 = "R2";
-    public static final String WRITE_2 = "W2";
     public static final String RIGHT = "SR";
     public static final String LEFT = "SL";
     public static final String HALT = "HALT";
@@ -20,14 +17,12 @@ public class PushDown2StackAutomaton extends AbstractAutomation {
 
     private Tape tape;
     private Stack stack1;
-    private Stack stack2;
 
-    public  PushDown2StackAutomaton(String input, String[][] transitionMap) {
+    public PushDown1StackAutomaton(String input, String[][] transitionMap) {
         super(input);
-        this.transitionMap = transitionMap;
         tape = new Tape();
-        stack1 = new Stack();
-        stack2 = new Stack();
+        this.transitionMap = transitionMap;
+        this.stack1 = new Stack();
         initialize();
     }
 
@@ -56,31 +51,11 @@ public class PushDown2StackAutomaton extends AbstractAutomation {
                                 getCurrentState().getStateObject().isActive(true);
                             }
                             break;
-                        case READ_2:
-                            value = stack2.peek() + "";
-                            if (transitionMap[i][1].equals(value)) {
-                                isFound = true;
-                                stack2.pop();
-                                getCurrentState().getStateObject().isActive(false);
-                                changeState(transitionMap[i][3]);
-                                getCurrentState().getStateObject().isActive(true);
-                            }
-                            break;
                         case WRITE_1:
                             value = transitionMap[i][1];
                             if (transitionMap[i][1].equals(value)) {
                                 isFound = true;
                                 stack1.push(value.charAt(0));
-                                getCurrentState().getStateObject().isActive(false);
-                                changeState(transitionMap[i][3]);
-                                getCurrentState().getStateObject().isActive(true);
-                            }
-                            break;
-                        case WRITE_2:
-                            value = transitionMap[i][1];
-                            if (transitionMap[i][1].equals(value)) {
-                                isFound = true;
-                                stack2.push(value.charAt(0));
                                 getCurrentState().getStateObject().isActive(false);
                                 changeState(transitionMap[i][3]);
                                 getCurrentState().getStateObject().isActive(true);
@@ -134,10 +109,9 @@ public class PushDown2StackAutomaton extends AbstractAutomation {
     public void printState() {
         System.out.println("---------------");
         System.out.println("Current State: "+ currentState.getName());
-        System.out.println("Tape: "+ tape.toString());
-        System.out.println("Tape index: "+ tape.getOffset() + tape.getIndex());
-        System.out.println("Stack 1: "+ stack1.toString());
-        System.out.println("Stack 2: "+ stack2.toString());
+        System.out.println("Tape: "+ tape.getString());
+        System.out.println("Tape index: "+ (tape.getOffset() + tape.getIndex()));
+        System.out.println("Stack: "+ stack1.getString());
         if(isCrashed)
             System.out.println("Program has crashed!");
         if(isDone())

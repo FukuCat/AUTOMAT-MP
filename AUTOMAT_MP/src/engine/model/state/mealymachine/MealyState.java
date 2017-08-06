@@ -1,11 +1,6 @@
-package engine.model.state;
+package engine.model.state.mealymachine;
 
-import engine.drawable.StateObject;
-import engine.model.automaton.AbstractAutomation;
 import engine.model.state.State;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by fukon on 7/12/2017.

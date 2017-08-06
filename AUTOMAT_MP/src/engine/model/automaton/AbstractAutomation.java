@@ -12,16 +12,16 @@ import java.util.List;
  */
 public abstract class AbstractAutomation {
 
-    private String input;
-    private HashMap<String, State> stateMap;
-    private State currentState;
-    private StringBuilder output;
+    protected String input;
+    protected HashMap<String, State> stateMap;
+    protected State currentState;
+    protected State previousState;
+    protected StringBuilder output;
 
     public AbstractAutomation(String input){
         setInput(input);
         stateMap = new HashMap<>();
         setOutput(new StringBuilder());
-        initialize();
     }
 
     public State getState(String name){
@@ -47,9 +47,9 @@ public abstract class AbstractAutomation {
 
     public abstract void initialize();
     public abstract void nextState();
-    public abstract void prevState();
     public abstract boolean isDone();
     public abstract boolean isCrashed();
+    public abstract void printState();
 
     public String getInput() {
         return input;

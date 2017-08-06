@@ -17,26 +17,23 @@ import java.awt.event.KeyEvent;
 /**
  * Created by fukon on 7/12/2017.
  */
-public class Machine01Scene extends GameScene{
+public class Machine03Scene extends GameScene{
 
     private static final int GRID = 50;
 
     private MealyMachine machine;
     private Camera camera;
 
-    public Machine01Scene(String name) {
+    public Machine03Scene(String name) {
         super(name);
 
         camera = new Camera(500.0f);
 
         init();
-        machine.printState();
     }
 
     @Override
     public void init() {
-
-        String input = "1100011";
 
         // State name | Input | Output | Next State
 
@@ -48,7 +45,7 @@ public class Machine01Scene extends GameScene{
                 {sA.getName(),"0","1",sA.getName()},
         };
 
-        machine = new MealyMachine(input, transitionMap);
+        machine = new MealyMachine("1100011", transitionMap);
         machine.addState(sA);
         machine.initialState(sA.getName());
         sA.getStateObject().isActive(true);

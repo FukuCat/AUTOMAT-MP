@@ -3,7 +3,9 @@ package engine.scenes;
 import engine.drawable.ArrowObject;
 import engine.drawable.StateObject;
 import engine.model.automaton.MealyMachine;
+import engine.model.automaton.PushDown1StackAutomaton;
 import engine.model.state.mealymachine.MealyState;
+import engine.model.state.pushdownautomata.*;
 import jGame.model.game.GameObject;
 import jGame.model.game.GameScene;
 import jGame.model.graphics.Camera;
@@ -17,14 +19,14 @@ import java.awt.event.KeyEvent;
 /**
  * Created by fukon on 7/12/2017.
  */
-public class Machine01Scene extends GameScene{
+public class Machine02Scene extends GameScene{
 
     private static final int GRID = 50;
 
-    private MealyMachine machine;
+    private PushDown1StackAutomaton machine;
     private Camera camera;
 
-    public Machine01Scene(String name) {
+    public Machine02Scene(String name) {
         super(name);
 
         camera = new Camera(500.0f);
@@ -36,24 +38,58 @@ public class Machine01Scene extends GameScene{
     @Override
     public void init() {
 
-        String input = "1100011";
 
-        // State name | Input | Output | Next State
+        String input = "##aaaabbbb#";
 
-        MealyState sA = new MealyState("A", true);
-        sA.setFinal(true);
+        PdaHaltState sH;
+        PdaScanLeftState sE;
+        PdaScanRightState sA, sC;
+        PdaReadState sF, sG;
+        PdaWriteState sB, sD;
 
+        sA = new PdaScanRightState("A");
+        sB = new PdaWriteState("B");
+        sC = new PdaScanRightState("C");
+        sD = new PdaWriteState("D");
+        sE = new PdaScanLeftState("E");
+        sF = new PdaReadState("F");
+        sG = new PdaReadState("G");
+        sH = new PdaHaltState("H");
+
+        // State name | Input | Type | Next State
         String transitionMap[][] = {
-                {sA.getName(),"1","0",sA.getName()},
-                {sA.getName(),"0","1",sA.getName()},
+                {sA.getName(),"#",PushDown1StackAutomaton.RIGHT,sB.getName()},
+                {sB.getName(),"#",PushDown1StackAutomaton.WRITE_1,sC.getName()},
+                {sC.getName(),"b",PushDown1StackAutomaton.RIGHT,sC.getName()},
+                {sC.getName(),"a",PushDown1StackAutomaton.RIGHT,sD.getName()},
+                {sD.getName(),"a",PushDown1StackAutomaton.WRITE_1,sC.getName()},
+                {sC.getName(),"#",PushDown1StackAutomaton.RIGHT,sE.getName()},
+                {sE.getName(),"b",PushDown1StackAutomaton.LEFT,sF.getName()},
+                {sF.getName(),"a",PushDown1StackAutomaton.READ_1,sE.getName()},
+                {sE.getName(),"a",PushDown1StackAutomaton.LEFT,sE.getName()},
+                {sE.getName(),"#",PushDown1StackAutomaton.LEFT,sG.getName()},
+                {sG.getName(),"#",PushDown1StackAutomaton.READ_1,sH.getName()},
+                {sH.getName(),"#",PushDown1StackAutomaton.HALT,sH.getName()}
         };
-
-        machine = new MealyMachine(input, transitionMap);
+        machine = new PushDown1StackAutomaton(input, transitionMap);
         machine.addState(sA);
+        machine.addState(sB);
+        machine.addState(sC);
+        machine.addState(sD);
+        machine.addState(sE);
+        machine.addState(sF);
+        machine.addState(sG);
+        machine.addState(sH);
         machine.initialState(sA.getName());
-        sA.getStateObject().isActive(true);
 
         StateObject oA = sA.getStateObject();
+        StateObject oB = sB.getStateObject();
+        StateObject oC = sC.getStateObject();
+        StateObject oD = sD.getStateObject();
+        StateObject oE = sE.getStateObject();
+        StateObject oF = sF.getStateObject();
+        StateObject oG = sG.getStateObject();
+        StateObject oH = sH.getStateObject();
 
         //Vector2f posA = new Vector2f(720/2,480/2);
         Vector2f posA = new Vector2f(7 * GRID,4 * GRID);

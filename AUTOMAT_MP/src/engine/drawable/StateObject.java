@@ -84,7 +84,7 @@ public class StateObject extends Physics2D implements GameObject {
 
         renderer.getRendIn().drawString(
                 name,
-                (int)(position.getX() + camera.getPosition().getX() - 3) + size / 2,
+                (int)(position.getX() + camera.getPosition().getX() - 3) + size / 2 - ((name.length() - 1) * 5)/2,
                 (int)(position.getY() + camera.getPosition().getY() + 2) + size / 2);
     }
 

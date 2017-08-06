@@ -28,7 +28,7 @@ public class MealyMachine extends AbstractAutomation{
 
     @Override
     public void nextState() {
-        if(index < getInput().length()) {
+        if(index < getInput().length() && !isCrashed) {
             boolean isFound = false;
             for (int i = 0; i < transitionMap.length; i++) {
                 String curr = getCurrentState().getName();
@@ -48,27 +48,6 @@ public class MealyMachine extends AbstractAutomation{
     }
 
     @Override
-    public void prevState() {
-        boolean isFound = false;
-        if(index > 0) {
-            index--;
-            for (int i = 0; i < transitionMap.length; i++) {
-                String curr = getCurrentState().getName();
-                if (transitionMap[i][3].equalsIgnoreCase(curr) && transitionMap[i][1].equals(getInput().charAt(index) + "")) {
-                    isFound = true;
-                    getCurrentState().getStateObject().isActive(false);
-                    changeState(transitionMap[i][0]);
-                    getCurrentState().getStateObject().isActive(true);
-                    unappendOutput();
-                    break;
-                }
-            }
-            if (!isFound && !getCurrentState().isFinal())
-                isCrashed = true;
-        }
-    }
-
-    @Override
     public boolean isDone() {
         return getCurrentState().isFinal();
     }
@@ -76,6 +55,20 @@ public class MealyMachine extends AbstractAutomation{
     @Override
     public boolean isCrashed() {
         return isCrashed;
+    }
+
+    @Override
+    public void printState() {
+        System.out.println("---------------");
+        System.out.println("Current State: "+ currentState.getName());
+        System.out.println("Input:  "+ input);
+        System.out.println("Input index: "+ index);
+        System.out.println("Output: "+getOutput());
+        if(isCrashed)
+            System.out.println("Program has crashed!");
+        if(isDone())
+            System.out.println("Program has reached final state!");
+
     }
 
 }
