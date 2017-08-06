@@ -6,24 +6,27 @@ import jGame.model.physics.Physics3D;
 public class Camera extends Physics3D{
 
 	public static final float DEF_LIMIT = 4000f;
-	public static final float DEF_ACCEL = 300f;
 	
 	// Movement
-	private float maxSpeed, accel;
+	private float accelerationLimit;
 	
 	public Camera(){
 		super();
-		maxSpeed = DEF_LIMIT;
-		accel = DEF_ACCEL;
-		
+		setAccelerationLimit(DEF_LIMIT);
+
+	}
+
+	public Camera(float accelerationLimit){
+		super();
+		setAccelerationLimit(accelerationLimit);
+
 	}
 	
 	public void reset(){
 		acceleration.setValue(0.0f, 0.0f, 0.0f);
 		position.setValue(0.0f, 0.0f, 0.0f);
 		rotation.setValue(0.0f, 0.0f, 0.0f);
-		maxSpeed = DEF_LIMIT;
-		accel = DEF_ACCEL;
+		setAccelerationLimit(DEF_LIMIT);
 	}
 	
 	public void setPosition(float x, float y, float z){position.setValue(x, y, z);}
@@ -52,14 +55,14 @@ public class Camera extends Physics3D{
 
 	public void logic(long deltaTime){
 		
-		if(acceleration.getX() > maxSpeed)
-			acceleration.setX(maxSpeed);
-		if(acceleration.getX() < -maxSpeed)
-			acceleration.setX(-maxSpeed);
-		if(acceleration.getY() > maxSpeed)
-			acceleration.setY(maxSpeed);
-		if(acceleration.getY() < -maxSpeed)
-			acceleration.setY(-maxSpeed);
+		if(acceleration.getX() > getAccelerationLimit())
+			acceleration.setX(getAccelerationLimit());
+		if(acceleration.getX() < -getAccelerationLimit())
+			acceleration.setX(-getAccelerationLimit());
+		if(acceleration.getY() > getAccelerationLimit())
+			acceleration.setY(getAccelerationLimit());
+		if(acceleration.getY() < -getAccelerationLimit())
+			acceleration.setY(-getAccelerationLimit());
 
 		position.incValue(acceleration.multiply(deltaTime / 1000000000.0f));
 
@@ -120,19 +123,12 @@ public class Camera extends Physics3D{
 		return acceleration;
 	}
 
-	public float getMaxSpeed() {
-		return maxSpeed;
+	public float getAccelerationLimit() {
+		return accelerationLimit;
 	}
 
-	public void setMaxSpeed(float maxSpeed) {
-		this.maxSpeed = maxSpeed;
+	public void setAccelerationLimit(float accelerationLimit) {
+		this.accelerationLimit = accelerationLimit;
 	}
 
-	public float getAccel() {
-		return accel;
-	}
-
-	public void setAccel(float accel) {
-		this.accel = accel;
-	}
 }

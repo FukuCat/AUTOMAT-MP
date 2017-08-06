@@ -35,6 +35,7 @@ public class SimpleTimer {
 		if(System.nanoTime() - prevTime > waitTime){
 			setResult(true);
 			lastTime = System.nanoTime() - prevTime;
+			prevTime = System.nanoTime();
 			return true;
 			}
 		setResult(false);

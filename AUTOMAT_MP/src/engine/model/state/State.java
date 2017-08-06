@@ -1,5 +1,6 @@
 package engine.model.state;
 
+import engine.drawable.StateObject;
 import engine.model.automaton.AbstractAutomation;
 
 import java.util.ArrayList;
@@ -10,19 +11,15 @@ import java.util.List;
  */
 public abstract class State {
 
+    private StateObject stateObject = null;
+
     private AbstractAutomation machine;
     private String name;
     private boolean isFinal;
-    private String output;
-    private int transitions;
-    protected String[][] transitionMap;
 
-    public State(String name, int transitions, String[][] transitionMap){
-        setFinal(false);
+    public State(String name, boolean isFinal){
+        setFinal(isFinal);
         setName(name);
-        setTransitions(transitions);
-        setTransitionMap(transitionMap);
-        setOutput("");
     }
 
 
@@ -34,31 +31,12 @@ public abstract class State {
         this.name = name;
     }
 
-    public abstract List<State> nextStates(String input);
-    public abstract List<State> nextStates(char input);
-
     public boolean isFinal() {
         return isFinal;
     }
 
     public void setFinal(boolean aFinal) {
         isFinal = aFinal;
-    }
-
-    public String getOutput() {
-        return output;
-    }
-
-    public void setOutput(String output) {
-        this.output = output;
-    }
-
-    public int getTransitions() {
-        return transitions;
-    }
-
-    public void setTransitions(int transitions) {
-        this.transitions = transitions;
     }
 
     public AbstractAutomation getMachine() {
@@ -69,11 +47,15 @@ public abstract class State {
         this.machine = machine;
     }
 
-    public String[][] getTransitionMap() {
-        return transitionMap;
+    public StateObject getStateObject() {
+        if(stateObject == null){
+            stateObject = new StateObject(name);
+            stateObject.setFinal(isFinal);
+        }
+        return stateObject;
     }
 
-    public void setTransitionMap(String[][] transitionMap) {
-        this.transitionMap = transitionMap;
+    public void setStateObject(StateObject stateObject) {
+        this.stateObject = stateObject;
     }
 }

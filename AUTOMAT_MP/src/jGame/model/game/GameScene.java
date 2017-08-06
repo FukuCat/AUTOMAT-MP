@@ -1,8 +1,10 @@
 package jGame.model.game;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import jGame.model.input.Input;
+import jGame.model.timer.SimpleTimer;
 import jGame.view.Renderer;
 
 public abstract class GameScene {
@@ -12,11 +14,20 @@ public abstract class GameScene {
 	protected GameSceneManager gameSceneManager;
 	protected boolean isDoneLoading;
 	protected boolean isSceneEnded;
+	private HashMap<Integer, SimpleTimer> inputTimers;
 
 	public GameScene(String name){
 		setActors(new ArrayList<>());
 		setName(name);
-		setDoneLoading(false);
+		setDoneLoading(true);
+		setSceneEnded(true);
+		setInputTimers(new HashMap<>());
+	}
+	public GameScene(String name, boolean isDoneLoading){
+	    setInputTimers(new HashMap<>());
+		setActors(new ArrayList<>());
+		setName(name);
+		setDoneLoading(isDoneLoading);
 		setSceneEnded(true);
 	}
 	// call loader and init vars -> set doneLoading to true
@@ -63,5 +74,12 @@ public abstract class GameScene {
 	public void setGameSceneManager(GameSceneManager gameSceneManager) {
 		this.gameSceneManager = gameSceneManager;
 	}
-	
+
+    public HashMap<Integer, SimpleTimer> getInputTimers() {
+        return inputTimers;
+    }
+
+    public void setInputTimers(HashMap<Integer, SimpleTimer> inputTimers) {
+        this.inputTimers = inputTimers;
+    }
 }

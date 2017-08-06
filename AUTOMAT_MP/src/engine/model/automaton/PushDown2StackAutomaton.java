@@ -1,13 +1,6 @@
 package engine.model.automaton;
 
-import engine.model.state.State;
-
-import java.util.List;
-
-/**
- * Created by fukon on 7/12/2017.
- */
-public class MealyMachine extends AbstractAutomation{
+public class PushDown2StackAutomaton extends AbstractAutomation {
 
     private int index;
 
@@ -15,7 +8,7 @@ public class MealyMachine extends AbstractAutomation{
     private String[][] transitionMap;
     private boolean isCrashed;
 
-    public MealyMachine(String input, String[][] transitionMap) {
+    public  PushDown2StackAutomaton(String input, String[][] transitionMap) {
         super(input);
         index = 0;
         this.transitionMap = transitionMap;
@@ -77,5 +70,4 @@ public class MealyMachine extends AbstractAutomation{
     public boolean isCrashed() {
         return isCrashed;
     }
-
 }

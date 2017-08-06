@@ -27,7 +27,8 @@ public class JGame extends JPanel implements Runnable{
 	
 	// Timer
 	private long deltaTime;
-	private long variableYieldTime, lastTime;
+	private long variableYieldTime, lastTime, startTime, prevTime;
+	private int aveFPS;
 	
 	// window variables
 	private GameScreen screen;
@@ -60,7 +61,8 @@ public class JGame extends JPanel implements Runnable{
 	}
 	
 	private void init(){
-		lastTime = System.nanoTime();
+		lastTime = prevTime = startTime = System.nanoTime();
+		aveFPS = 0;
 	}
 	
 	@Override
@@ -126,6 +128,24 @@ public class JGame extends JPanel implements Runnable{
 	        	variableYieldTime = Math.max(variableYieldTime - 2*1000, 0);
 	        }
 	    }
+	    //calculateFPS();
+	}
+
+	private void calculateFPS(){
+		aveFPS++;
+		//System.out.println("now: "+ glfwGetTime());
+		//System.out.println("last: "+ lastTime);
+		long tempTime = System.nanoTime();
+		if( (tempTime - prevTime) / 1000000000.0f >= 1.0f ){
+			if(true){
+				System.out.println("[FPS]");
+				System.out.println("Time:           " + ((prevTime - startTime) / 1000000000.0f));
+				System.out.println("Millisec/Frame: " + deltaTime);
+				System.out.println("Average FPS:    " + aveFPS);
+			}
+			aveFPS = 0;
+			prevTime = tempTime;
+		}
 	}
 	
 	public void initialGameScene(String sceneName){engine.getGameSceneManager().changeScene(sceneName);}
