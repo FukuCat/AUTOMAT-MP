@@ -5,8 +5,8 @@ import engine.model.state.pushdownautomata.Tape;
 
 public class PushDown1StackAutomaton extends AbstractAutomation {
 
-    public static final String READ_1 = "R1";
-    public static final String WRITE_1 = "W1";
+    public static final String READ = "R1";
+    public static final String WRITE = "W1";
     public static final String RIGHT = "SR";
     public static final String LEFT = "SL";
     public static final String HALT = "HALT";
@@ -16,20 +16,24 @@ public class PushDown1StackAutomaton extends AbstractAutomation {
     private boolean isCrashed;
 
     private Tape tape;
-    private Stack stack1;
+    private Stack stack;
+
+    private boolean isStart;
 
     public PushDown1StackAutomaton(String input, String[][] transitionMap) {
         super(input);
-        tape = new Tape();
+        if(input == null)
+            input = "##";
         this.transitionMap = transitionMap;
-        this.stack1 = new Stack();
-        initialize();
     }
 
     @Override
     public void initialize() {
+        isStart = true;
         isCrashed = false;
-        tape.initialize(input);
+        setStack(new Stack());
+        setTape(new Tape());
+        getTape().initialize(input);
     }
 
     @Override
@@ -41,47 +45,51 @@ public class PushDown1StackAutomaton extends AbstractAutomation {
                 String curr = getCurrentState().getName();
                 if (transitionMap[i][0].equalsIgnoreCase(curr)) {
                     switch (transitionMap[i][2]) {
-                        case READ_1:
-                            value = stack1.peek() + "";
+                        case READ:
+                            value = getStack().peek() + "";
                             if (transitionMap[i][1].equals(value)) {
                                 isFound = true;
-                                stack1.pop();
+                                getStack().pop();
                                 getCurrentState().getStateObject().isActive(false);
                                 changeState(transitionMap[i][3]);
                                 getCurrentState().getStateObject().isActive(true);
                             }
                             break;
-                        case WRITE_1:
+                        case WRITE:
                             value = transitionMap[i][1];
                             if (transitionMap[i][1].equals(value)) {
                                 isFound = true;
-                                stack1.push(value.charAt(0));
+                                getStack().push(value.charAt(0));
                                 getCurrentState().getStateObject().isActive(false);
                                 changeState(transitionMap[i][3]);
                                 getCurrentState().getStateObject().isActive(true);
                             }
                             break;
                         case RIGHT:
-                            tape.moveRight();
-                            value = tape.read() + "";
+                            if(!isStart)
+                                getTape().moveRight();
+                            value = getTape().read() + "";
                             if (transitionMap[i][1].equals(value)) {
+                                isStart = false;
                                 isFound = true;
                                 getCurrentState().getStateObject().isActive(false);
                                 changeState(transitionMap[i][3]);
                                 getCurrentState().getStateObject().isActive(true);
                             } else
-                                tape.moveLeft();
+                                getTape().moveLeft();
                             break;
                         case LEFT:
-                            tape.moveLeft();
-                            value = tape.read() + "";
+                            if(!isStart)
+                                getTape().moveLeft();
+                            value = getTape().read() + "";
                             if (transitionMap[i][1].equals(value)) {
+                                isStart = false;
                                 isFound = true;
                                 getCurrentState().getStateObject().isActive(false);
                                 changeState(transitionMap[i][3]);
                                 getCurrentState().getStateObject().isActive(true);
                             } else
-                                tape.moveRight();
+                                getTape().moveRight();
                             break;
                         case HALT:
                             break;
@@ -107,15 +115,36 @@ public class PushDown1StackAutomaton extends AbstractAutomation {
 
     @Override
     public void printState() {
-        System.out.println("---------------");
-        System.out.println("Current State: "+ currentState.getName());
-        System.out.println("Tape: "+ tape.getString());
-        System.out.println("Tape index: "+ (tape.getOffset() + tape.getIndex()));
-        System.out.println("Stack: "+ stack1.getString());
+        System.out.print("---------------");
+        System.out.print("\nCurrent State: "+ currentState.getName());
+        System.out.print("\nTape:  "+ getTape().getString());
+        System.out.print("\n       ");
+        for(int i = 0; i < (getTape().getOffset() + getTape().getIndex()); i++)
+            System.out.print(" ");
+        System.out.print("^\n");
+
+        System.out.println("Tape index: "+ (getTape().getOffset() + getTape().getIndex()));
+        System.out.println("Stack: "+ getStack().getString());
         if(isCrashed)
             System.out.println("Program has crashed!");
         if(isDone())
             System.out.println("Program has reached final state!");
 
+    }
+
+    public Tape getTape() {
+        return tape;
+    }
+
+    public void setTape(Tape tape) {
+        this.tape = tape;
+    }
+
+    public Stack getStack() {
+        return stack;
+    }
+
+    public void setStack(Stack stack) {
+        this.stack = stack;
     }
 }

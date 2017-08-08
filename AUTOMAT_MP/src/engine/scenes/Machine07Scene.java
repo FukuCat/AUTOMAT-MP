@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 /**
  * Created by fukon on 7/12/2017.
  */
-public class Machine01Scene extends GameScene{
+public class Machine07Scene extends GameScene{
 
     private static final int GRID = 50;
 
@@ -31,8 +31,9 @@ public class Machine01Scene extends GameScene{
     private SimpleTimer tmrAuto;
     private Font font;
 
-    public Machine01Scene(String name) {
+    public Machine07Scene(String name) {
         super(name);
+
         font = new Font("courier new", Font.PLAIN, 12);
         camera = new Camera(500.0f);
         getExternalActions().put("MACHINE_01", () -> gameSceneManager.changeScene("MACHINE_01"));
@@ -51,37 +52,47 @@ public class Machine01Scene extends GameScene{
         isAuto = false;
         String input = Logic.getInstance().getInput();
 
-        // State name | Input | Output | Next State
-
         MealyState sA = new MealyState("A", true);
-        sA.setFinal(true);
+        MealyState sB = new MealyState("B", true);
 
+
+        // State name | Input | Output | Next State
         String transitionMap[][] = {
-                {sA.getName(),"1","0",sA.getName()},
-                {sA.getName(),"0","1",sA.getName()},
+                {sA.getName(),"a","a",sA.getName()},
+                {sA.getName(),"b","a",sB.getName()},
+                {sB.getName(),"b","b",sB.getName()},
+                {sB.getName(),"a","b",sA.getName()},
         };
 
         Logic.getInstance().setMachine(new MealyMachine(input, transitionMap));
         Logic.getInstance().getMachine().addState(sA);
+        Logic.getInstance().getMachine().addState(sB);
         Logic.getInstance().getMachine().initialState(sA.getName());
         sA.getStateObject().isActive(true);
 
         StateObject oA = sA.getStateObject();
+        StateObject oB = sB.getStateObject();
 
         //Vector2f posA = new Vector2f(720/2,480/2);
-        Vector2f posA = new Vector2f(5 * GRID,4 * GRID);
+        Vector2f posA = new Vector2f(4 * GRID,4 * GRID);
+        Vector2f posB = new Vector2f(6 * GRID,4 * GRID);
 
         oA.setInitialPos(posA);
+        oB.setInitialPos(posB);
         oA.setPosition(posA.getX(), posA.getY());
+        oB.setPosition(posB.getX(), posB.getY());
 
         getInputTimers().put(KeyEvent.VK_R, new SimpleTimer(0.125f));
         getInputTimers().put(KeyEvent.VK_N, new SimpleTimer(0.125f));
         camera.reset();
         getActors().clear();
         getActors().add(oA);
-        getActors().add(new ArrowObject("",4 * GRID,4 * GRID, ArrowObject.RIGHT));
-        getActors().add(new ArrowObject("1/0",5 * GRID,3 * GRID, ArrowObject.SELF_DOWN));
-        getActors().add(new ArrowObject("0/1",5 * GRID,5 * GRID, ArrowObject.SELF_UP));
+        getActors().add(oB);
+        getActors().add(new ArrowObject("",3 * GRID,4 * GRID, ArrowObject.RIGHT));
+        getActors().add(new ArrowObject("a/b",5 * GRID,4 * GRID + 5, ArrowObject.LEFT));
+        getActors().add(new ArrowObject("b/a",5 * GRID,4 * GRID - 5, ArrowObject.RIGHT));
+        getActors().add(new ArrowObject("a/a",4 * GRID,3 * GRID, ArrowObject.SELF_DOWN));
+        getActors().add(new ArrowObject("b/b",6 * GRID,3 * GRID, ArrowObject.SELF_DOWN));
 
     }
 
@@ -152,7 +163,6 @@ public class Machine01Scene extends GameScene{
             renderer.getRendIn().drawString("Current state is final!", 25,65);
         if(Logic.getInstance().getMachine().isCrashed())
             renderer.getRendIn().drawString("Machine has crashed!", 25,85);
-
     }
 
     @Override

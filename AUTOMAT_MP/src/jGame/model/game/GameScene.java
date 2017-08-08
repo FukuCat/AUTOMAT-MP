@@ -2,7 +2,9 @@ package jGame.model.game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
+import jGame.model.external.ExternalAction;
 import jGame.model.input.Input;
 import jGame.model.timer.SimpleTimer;
 import jGame.view.Renderer;
@@ -15,6 +17,9 @@ public abstract class GameScene {
 	protected boolean isDoneLoading;
 	protected boolean isSceneEnded;
 	private HashMap<Integer, SimpleTimer> inputTimers;
+	// accessing from outside the jpanel
+	private ConcurrentLinkedQueue<String> actionQueue;
+	private HashMap<String, ExternalAction> externalActions;
 
 	public GameScene(String name){
 		setActors(new ArrayList<>());
@@ -22,6 +27,8 @@ public abstract class GameScene {
 		setDoneLoading(true);
 		setSceneEnded(true);
 		setInputTimers(new HashMap<>());
+		setExternalActions(new HashMap<>());
+		setActionQueue(new ConcurrentLinkedQueue<>());
 	}
 	public GameScene(String name, boolean isDoneLoading){
 	    setInputTimers(new HashMap<>());
@@ -29,6 +36,8 @@ public abstract class GameScene {
 		setName(name);
 		setDoneLoading(isDoneLoading);
 		setSceneEnded(true);
+		setExternalActions(new HashMap<>());
+		setActionQueue(new ConcurrentLinkedQueue<>());
 	}
 	// call loader and init vars -> set doneLoading to true
 	public abstract void init();
@@ -82,4 +91,20 @@ public abstract class GameScene {
     public void setInputTimers(HashMap<Integer, SimpleTimer> inputTimers) {
         this.inputTimers = inputTimers;
     }
+
+	public HashMap<String, ExternalAction> getExternalActions() {
+		return externalActions;
+	}
+
+	public void setExternalActions(HashMap<String, ExternalAction> externalActions) {
+		this.externalActions = externalActions;
+	}
+
+	public ConcurrentLinkedQueue<String> getActionQueue() {
+		return actionQueue;
+	}
+
+	public void setActionQueue(ConcurrentLinkedQueue<String> actionQueue) {
+		this.actionQueue = actionQueue;
+	}
 }

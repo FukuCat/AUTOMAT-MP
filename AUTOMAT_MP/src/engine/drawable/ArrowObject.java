@@ -34,9 +34,11 @@ public class ArrowObject extends Physics2D implements GameObject {
     private Polygon arrowHead;
 
     private int type;
+    private Font font;
 
     public ArrowObject(String name, int x, int y, int type){
         super();
+        font = new Font("default", Font.PLAIN, 12);
         setInitialPos(new Vector2f(x,y));
         setName(name);
         this.type = type;
@@ -189,21 +191,22 @@ public class ArrowObject extends Physics2D implements GameObject {
                 stringX -= 5;
                 break;
             case DOWN:
-
+                stringX += 6;
                 break;
             case SELF_LEFT:
 
                 break;
             case LEFT:
-
+                stringY = (int)(position.getY() + camera.getPosition().getY() + 2) + 50 / 2 + 10;
                 break;
             case SELF_RIGHT:
 
                 break;
             case RIGHT:
-
+                stringY = (int)(position.getY() + camera.getPosition().getY() + 2) + 50 / 2 - 5;
                 break;
         }
+        renderer.getRendIn().setFont(font);
         renderer.getRendIn().drawString(
                 name, stringX, stringY);
 

@@ -22,6 +22,7 @@ public abstract class AbstractAutomation {
         setInput(input);
         stateMap = new HashMap<>();
         setOutput(new StringBuilder());
+        initialize();
     }
 
     public State getState(String name){

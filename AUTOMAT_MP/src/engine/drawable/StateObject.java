@@ -25,9 +25,11 @@ public class StateObject extends Physics2D implements GameObject {
     private String name;
 
     private boolean isFinal;
+    private Font font;
 
     public StateObject(String name, int x, int y){
         super();
+        font = new Font("default", Font.PLAIN, 12);
         size = DIAMETER;
         setInitialPos(new Vector2f(x,y));
         setName(name);
@@ -70,6 +72,7 @@ public class StateObject extends Physics2D implements GameObject {
     public void render(Renderer renderer, Camera camera) {
         renderer.getRendIn().setStroke(new BasicStroke(stroke));
         renderer.getRendIn().setColor(fill);
+        renderer.getRendIn().setFont(font);
         renderer.getRendIn().drawOval(
                 (int)(position.getX() + camera.getPosition().getX()),
                 (int)(position.getY() + camera.getPosition().getY()),
@@ -107,6 +110,12 @@ public class StateObject extends Physics2D implements GameObject {
 
     public void setInitialPos(Vector2f initialPos) {
         this.initialPos = initialPos;
+        this.position.setValue(initialPos.getX(), initialPos.getY());
+    }
+
+    public void setInitialPos(int x, int y) {
+        this.initialPos = new Vector2f(x, y);
+        this.position.setValue(x, y);
     }
 
     public boolean isFinal() {

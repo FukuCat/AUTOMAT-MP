@@ -1,5 +1,6 @@
 package engine.drawable;
 
+import engine.model.state.pushdownautomata.Stack;
 import jGame.model.game.GameObject;
 import jGame.model.graphics.Camera;
 import jGame.model.input.Input;
@@ -10,39 +11,21 @@ import jGame.view.Renderer;
 import java.awt.*;
 
 public class StackObject extends Physics2D implements GameObject {
-    private static final Color ACTIVE = Color.GREEN;
-    private static final Color INACTIVE = Color.BLACK;
-    private static final int DIAMETER = 50;
 
-    private StringBuilder sb;
+    private Stack stack;
 
-    private Vector2f initialPos;
-    private Color fill;
-    private int size;
-    private int stroke;
-    private String name;
+    private Color fill = Color.black;
+    private Font font;
 
-    public StackObject(float x, float y, String name){
+    public StackObject(Stack stack){
         super();
-        size = DIAMETER;
-        initialPos = new Vector2f(x,y);
-        setName(name);
-        reset();
-    }
-
-    public void isActive(boolean value){
-        if(value)
-            fill = ACTIVE;
-        else
-            fill = INACTIVE;
+        this.stack = stack;
+        font = new Font("Courier New", Font.PLAIN, 12);
     }
 
     @Override
     public void reset() {
-        sb = new StringBuilder();
-        fill = INACTIVE;
-        stroke = 2;
-        position.setValue(initialPos.getX() - size / 2, initialPos.getY() - size / 2);
+
     }
 
     @Override
@@ -57,19 +40,15 @@ public class StackObject extends Physics2D implements GameObject {
 
     @Override
     public void render(Renderer renderer, Camera camera) {
-
+        String text = "Stack: "+stack.getString();
+        renderer.getRendIn().setColor(fill);
+        renderer.getRendIn().setFont(font);
+        renderer.getRendIn().drawString(text, position.getX() + camera.getPosition().getX(),
+                position.getY() + camera.getPosition().getY());
     }
 
     @Override
     public void close() {
 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

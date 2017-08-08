@@ -17,12 +17,14 @@ public class MealyMachine extends AbstractAutomation{
 
     public MealyMachine(String input, String[][] transitionMap) {
         super(input);
-        index = 0;
+        if(input == null)
+            this.input = "";
         this.transitionMap = transitionMap;
     }
 
     @Override
     public void initialize() {
+        index = 0;
         isCrashed = false;
     }
 
@@ -41,7 +43,7 @@ public class MealyMachine extends AbstractAutomation{
                     break;
                 }
             }
-            if (!isFound && !getCurrentState().isFinal())
+            if (!isFound)
                 isCrashed = true;
             index++;
         }
@@ -59,9 +61,14 @@ public class MealyMachine extends AbstractAutomation{
 
     @Override
     public void printState() {
-        System.out.println("---------------");
-        System.out.println("Current State: "+ currentState.getName());
-        System.out.println("Input:  "+ input);
+        System.out.print("---------------");
+        System.out.print("\nCurrent State: "+ currentState.getName());
+        System.out.print("\nInput:  "+ input);
+        System.out.print("\n        ");
+        for(int i = 1; i < index; i++)
+            System.out.print(" ");
+        System.out.print("^\n");
+
         System.out.println("Input index: "+ index);
         System.out.println("Output: "+getOutput());
         if(isCrashed)
