@@ -152,7 +152,7 @@ public class MachineProject extends JGameDriver {
             this.add(lbl_input);
             this.add(txt_input);
             this.add(btn_enter);
-            this.add(Box.createRigidArea(new Dimension(0, 5)));
+            this.add(Box.createRigidArea(new Dimension(0, 10)));
             this.add(btn_play);
             this.add(btn_pause);
             this.add(btn_next);

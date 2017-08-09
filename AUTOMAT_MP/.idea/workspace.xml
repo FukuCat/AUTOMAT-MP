@@ -2,44 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13c871eb-58fa-459a-9c54-200cf4377e5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/model/Logic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jGame/model/external/ExternalAction.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/PushDown2StackAutomaton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine03Scene.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/model/automaton/PushDown2StackAutomaton.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/Main.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/MachineProject$ControlPanel.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/MachineProject$ControlPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/MachineProject.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/MachineProject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/ArrowObject.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/ArrowObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/StackObject.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/StackObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/StateObject.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/StateObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/TapeObject.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/drawable/TapeObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/AbstractAutomation.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/AbstractAutomation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/MealyMachine.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/MealyMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/PushDown1StackAutomaton.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/automaton/PushDown1StackAutomaton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/state/pushdownautomata/Stack.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/state/pushdownautomata/Stack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/state/pushdownautomata/Tape.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/model/state/pushdownautomata/Tape.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine01Scene.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine01Scene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine02Scene.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine02Scene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/StartScene.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/StartScene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/jGame/model/game/GameScene.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/jGame/model/game/GameScene.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine07Scene.class" afterPath="$PROJECT_DIR$/out/production/AUTOMAT_MP/engine/scenes/Machine07Scene.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/MachineProject.java" afterPath="$PROJECT_DIR$/src/engine/MachineProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/drawable/ArrowObject.java" afterPath="$PROJECT_DIR$/src/engine/drawable/ArrowObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/drawable/StackObject.java" afterPath="$PROJECT_DIR$/src/engine/drawable/StackObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/drawable/StateObject.java" afterPath="$PROJECT_DIR$/src/engine/drawable/StateObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/drawable/TapeObject.java" afterPath="$PROJECT_DIR$/src/engine/drawable/TapeObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/model/automaton/AbstractAutomation.java" afterPath="$PROJECT_DIR$/src/engine/model/automaton/AbstractAutomation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/model/automaton/MealyMachine.java" afterPath="$PROJECT_DIR$/src/engine/model/automaton/MealyMachine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/model/automaton/PushDown1StackAutomaton.java" afterPath="$PROJECT_DIR$/src/engine/model/automaton/PushDown1StackAutomaton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Stack.java" afterPath="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Stack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java" afterPath="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/scenes/Machine01Scene.java" afterPath="$PROJECT_DIR$/src/engine/scenes/Machine01Scene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/scenes/Machine02Scene.java" afterPath="$PROJECT_DIR$/src/engine/scenes/Machine02Scene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/scenes/StartScene.java" afterPath="$PROJECT_DIR$/src/engine/scenes/StartScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jGame/model/game/GameScene.java" afterPath="$PROJECT_DIR$/src/jGame/model/game/GameScene.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/scenes/Machine03Scene.java" afterPath="$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java" afterPath="$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +24,18 @@
       <file leaf-file-name="MachineProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/MachineProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="240" column="49" lean-forward="false" selection-start-line="240" selection-start-column="49" selection-end-line="240" selection-end-column="49" />
+            <state relative-caret-position="-2142">
+              <caret line="154" column="60" lean-forward="false" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -64,8 +44,8 @@
       <file leaf-file-name="Machine01Scene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine01Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="149" column="104" lean-forward="true" selection-start-line="149" selection-start-column="104" selection-end-line="153" selection-end-column="75" />
+            <state relative-caret-position="351">
+              <caret line="153" column="75" lean-forward="false" selection-start-line="153" selection-start-column="75" selection-end-line="153" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -74,18 +54,18 @@
       <file leaf-file-name="Machine02Scene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine02Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="214" column="79" lean-forward="false" selection-start-line="214" selection-start-column="79" selection-end-line="214" selection-end-column="79" />
+            <state relative-caret-position="189">
+              <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tape.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java">
+      <file leaf-file-name="Machine07Scene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="-210">
+              <caret line="58" column="51" lean-forward="true" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -145,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/engine/drawable/StackObject.java" />
         <option value="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Stack.java" />
         <option value="$PROJECT_DIR$/src/engine/model/Logic.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/jGame/controller/SceneController.java" />
         <option value="$PROJECT_DIR$/src/jGame/model/game/ExternalAction.java" />
         <option value="$PROJECT_DIR$/src/jGame/model/external/ExternalAction.java" />
@@ -153,18 +132,19 @@
         <option value="$PROJECT_DIR$/src/engine/scenes/StartScene.java" />
         <option value="$PROJECT_DIR$/src/engine/model/automaton/PushDown1StackAutomaton.java" />
         <option value="$PROJECT_DIR$/src/engine/drawable/StateObject.java" />
-        <option value="$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java" />
         <option value="$PROJECT_DIR$/src/engine/model/automaton/MealyMachine.java" />
+        <option value="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java" />
         <option value="$PROJECT_DIR$/src/engine/scenes/Machine01Scene.java" />
+        <option value="$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java" />
         <option value="$PROJECT_DIR$/src/engine/scenes/Machine02Scene.java" />
         <option value="$PROJECT_DIR$/src/engine/MachineProject.java" />
-        <option value="$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="132" />
-    <option name="y" value="78" />
+    <option name="x" value="109" />
+    <option name="y" value="21" />
     <option name="width" value="1762" />
     <option name="height" value="1021" />
   </component>
@@ -184,9 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,89 +177,18 @@
               <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="drawable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="automaton" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="state" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="state" type="462c0819:PsiDirectoryNode" />
-              <item name="pushdownautomata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jGame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jGame" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AUTOMAT_MP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AUTOMAT_MP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jGame" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Programming_Sandbox/Java/IntelliJ_IDEA_Workspace/ALGOCOM-Binomial-Heap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OPERSYS-Roller-Coster-Problem/Roller-Coster" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -547,8 +454,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="132" y="78" width="1762" height="1021" extended-state="0" />
-    <editor active="true" />
+    <frame x="109" y="21" width="1762" height="1021" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -558,12 +464,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39247945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39247945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23309608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2366548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -670,13 +576,6 @@
     <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/RightState.java" />
     <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/LeftState.java" />
     <entry file="file://$PROJECT_DIR$/src/engine/drawable/ArrowObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/jGame/model/graphics/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2228">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/PdaState.java" />
     <entry file="file://$PROJECT_DIR$/src/engine/model/state/State.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -723,22 +622,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/NumberObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="49" column="67" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="49" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/drawable/ArrowObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/NumberObject.java" />
     <entry file="file://$PROJECT_DIR$/src/engine/drawable/TapeObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -759,14 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jGame/controller/SceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jGame/controller/SceneController.java" />
     <entry file="file://$PROJECT_DIR$/src/jGame/model/game/GameSceneManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -775,19 +652,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jGame/model/game/ExternalAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jGame/model/game/ExternalAction.java" />
     <entry file="file://$PROJECT_DIR$/src/jGame/model/external/ExternalAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,38 +691,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/scenes/StartScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/model/automaton/AbstractAutomation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/drawable/StackObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="44" column="14" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="46" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding>
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,42 +734,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="158" column="43" lean-forward="true" selection-start-line="158" selection-start-column="43" selection-end-line="164" selection-end-column="75" />
+        <state relative-caret-position="468">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jGame/model/graphics/Texture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/drawable/ArrowObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-735">
+          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine01Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="149" column="104" lean-forward="true" selection-start-line="149" selection-start-column="104" selection-end-line="153" selection-end-column="75" />
+        <state relative-caret-position="351">
+          <caret line="153" column="75" lean-forward="false" selection-start-line="153" selection-start-column="75" selection-end-line="153" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine02Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="214" column="79" lean-forward="false" selection-start-line="214" selection-start-column="79" selection-end-line="214" selection-end-column="79" />
+        <state relative-caret-position="189">
+          <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/scenes/StartScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/scenes/Machine07Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="58" column="51" lean-forward="true" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/drawable/StackObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="44" column="14" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="46" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/MachineProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="240" column="49" lean-forward="false" selection-start-line="240" selection-start-column="49" selection-end-line="240" selection-end-column="49" />
+        <state relative-caret-position="-2142">
+          <caret line="154" column="60" lean-forward="false" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/model/state/pushdownautomata/Tape.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="42">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>

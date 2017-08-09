@@ -54,7 +54,6 @@ public class Machine01Scene extends GameScene{
         // State name | Input | Output | Next State
 
         MealyState sA = new MealyState("A", true);
-        sA.setFinal(true);
 
         String transitionMap[][] = {
                 {sA.getName(),"1","0",sA.getName()},
@@ -150,8 +149,10 @@ public class Machine01Scene extends GameScene{
         renderer.getRendIn().drawString("Output: "+Logic.getInstance().getMachine().getOutput(), 25,45);
         if(Logic.getInstance().getMachine().isDone())
             renderer.getRendIn().drawString("Current state is final!", 25,65);
+        renderer.getRendIn().setColor(Color.RED);
         if(Logic.getInstance().getMachine().isCrashed())
             renderer.getRendIn().drawString("Machine has crashed!", 25,85);
+        renderer.getRendIn().setColor(Color.BLACK);
 
     }
 

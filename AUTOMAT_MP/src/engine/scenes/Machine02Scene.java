@@ -15,6 +15,7 @@ import jGame.model.input.Input;
 import jGame.model.timer.SimpleTimer;
 import jGame.view.Renderer;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 
 /**
@@ -208,11 +209,13 @@ public class Machine02Scene extends GameScene{
         for(GameObject o : getActors())
             o.render(renderer, camera);
 
-
+        renderer.getRendIn().setColor(Color.BLACK);
         if(Logic.getInstance().getMachine().isDone())
             renderer.getRendIn().drawString("Current state is final!", 25,65 + 375);
+        renderer.getRendIn().setColor(Color.RED);
         if(Logic.getInstance().getMachine().isCrashed())
             renderer.getRendIn().drawString("Machine has crashed!", 25,85 + 375);
+        renderer.getRendIn().setColor(Color.BLACK);
 
     }
 
